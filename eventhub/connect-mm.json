@@ -1,0 +1,32 @@
+{
+  "name":"kafkatoeventhub",
+  "config": {
+        "connector.class":"org.apache.kafka.connect.mirror.MirrorSourceConnector",
+                "groups":"data_anywhere.cid",
+                "key.converter":"org.apache.kafka.connect.converters.ByteArrayConverter",
+                "name":"kafkatoeventhub",
+                "source.cluster.alias":"prod",
+                "target.cluster.alias":"eventhub",
+                "source.cluster.bootstrap.servers":"broker:29092",
+                "sync.topic.acls.enabled":"false",
+                "sync.topic.config.enabled":"false",
+                "topics":"pageviews",
+                "target.cluster.bootstrap.servers":"edwinisawesome.servicebus.windows.net:9093",
+                "target.cluster.security.protocol":"SASL_SSL",
+                "target.cluster.sasl.mechanism":"PLAIN",
+                "target.cluster.sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username='$ConnectionString' password='Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<key>';",
+                "value.converter":"org.apache.kafka.connect.converters.ByteArrayConverter",
+                "topic.creation.groups":"delete",
+                "topic.creation.default.replication.factor":"3",
+                "topic.creation.default.partitions":"5",
+                "topic.creation.delete.replication.factor":"1",
+                "topic.creation.delete.partitions":"1",
+                "topic.creation.delete.cleanup.policy":"delete",
+                "topic.creation.delete.include":".*pageviews.*",
+                "topic.creation.delete.log.retention.ms":"86400000",
+				"target.cluster.metadata.max.idle.ms":"180000",
+				"target.cluster.connections.max.idle.ms":"180000",
+				"producer.connections.max.idle.ms": "180000",
+				"producer.metadata.max.age.ms": "180000"
+    }
+}
