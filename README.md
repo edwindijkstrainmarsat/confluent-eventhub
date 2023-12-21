@@ -15,6 +15,7 @@ sudo apt install default-jre -y
 wget https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
 tar -xzf kafka_2.13-3.6.1.tgz
 ```
+To test Azure connectivity with the Kafka CLI, have a look here: https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/kafka-cli
 
 ### setup docker
 ```shell
@@ -31,4 +32,3 @@ git clone https://github.com/edwindijkstrainmarsat/confluent-eventhub.git
 cd confluent-eventhub
 docker compose up -d
 ```
-
