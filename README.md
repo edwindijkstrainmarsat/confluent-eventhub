@@ -21,3 +21,4 @@ sudo usermod -aG docker $USER
 
 ### log out and log back in
 
+docker compose up -d
