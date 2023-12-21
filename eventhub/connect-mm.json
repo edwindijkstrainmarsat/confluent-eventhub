@@ -11,7 +11,7 @@
                 "sync.topic.acls.enabled":"false",
                 "sync.topic.config.enabled":"false",
                 "topics":"pageviews",
-                "target.cluster.bootstrap.servers":"edwinisawesome.servicebus.windows.net:9093",
+                "target.cluster.bootstrap.servers":"<namespace>.servicebus.windows.net:9093",
                 "target.cluster.security.protocol":"SASL_SSL",
                 "target.cluster.sasl.mechanism":"PLAIN",
                 "target.cluster.sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username='$ConnectionString' password='Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<key>';",
