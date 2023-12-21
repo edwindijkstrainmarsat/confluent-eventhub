@@ -32,3 +32,10 @@ git clone https://github.com/edwindijkstrainmarsat/confluent-eventhub.git
 cd confluent-eventhub
 docker compose up -d
 ```
+### setup a data generator
+```
+curl -X POST -H "Content-Type: application/json" --data @config/connector_pageviews.config http://localhost:8083/connectors
+docker-compose exec kafka-connect kafka-console-consumer --topic pageviews --bootstrap-server kafka:29092  --property print.key=true --max-messages 5 --from-beginning
+```
+### setup mirrormaker from the local kafka to eventhub
+curl -X POST -H "Content-Type: application/json" --data @eventhub/connect-mm.json http://localhost:8085/connectors
